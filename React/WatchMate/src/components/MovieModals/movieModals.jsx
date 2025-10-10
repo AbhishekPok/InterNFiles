@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { createMovies } from '../../services/movie';
+import {CreateMovies}  from '../../services/movie';
 
 
 function MovieModal(props) {
@@ -20,7 +20,7 @@ function MovieModal(props) {
   
   const handleSumbit = async() => {
     // console.log("k hudai xa yeha")
-    await createMovies(FormData);
+    await CreateMovies(FormData);
     handleClose();
     setRefesh((prev) => !prev);
   };

@@ -14,11 +14,11 @@ export const listMovie = async () => {
         console.error(error.message);
     }
 }
-export const createMovies = async (movieData) => {
+export const CreateMovies = async (movieData) => {
     try{
         const response = await fetch(API_BASE_URL + "/list/",
             {method:"POST",
-            headers:{
+            headers:{listMovie,
                 "Content-Type":"application/json"
             },
             body: JSON.stringify(movieData),
@@ -34,3 +34,5 @@ export const createMovies = async (movieData) => {
         }
         
     }
+
+// export default {listMovie, CreateMovies}; 
