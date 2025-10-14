@@ -1,4 +1,4 @@
 Python is fun.
-File handling makes it powerful
+File handling makes it powerful.
 Exception handling makes it reliable.
 I am Learning python to be proficient in pYthon.
