@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import {CreateMovies, updateMovie}  from '../../services/movie';
+import {createMovies, updateMovie, deleteMovie}  from '../../services/movie';
 
 
 function MovieModal(props) {
@@ -18,13 +18,16 @@ function MovieModal(props) {
     });
   };
   
+console.log("selected movee", selectedMovie);
+
+
   const handleSumbit = async() => {
     // console.log("k hudai xa yeha")
     if (selectedMovie){
       await updateMovie(selectedMovie.id, FormData);
     }
     else{
-    await CreateMovies(FormData);
+    await createMovies(FormData);
     }
     handleClose();
     setRefesh((prev) => !prev);
@@ -89,8 +92,6 @@ function MovieModal(props) {
               onChange={handleChange}
               defaultChecked={selectedMovie?.active ?? ""}
               />
-              
-              
             </Form.Group>
           </Form>
         </Modal.Body>

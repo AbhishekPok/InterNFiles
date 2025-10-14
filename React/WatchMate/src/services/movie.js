@@ -1,6 +1,7 @@
 import { API_BASE_URL } from '../common/api'
 
 export const updateMovie = async (movieID ,movieData) => {
+    console.log("movie details:", movieData, movieID)
     try{
         const response = await fetch(API_BASE_URL + "/list/" + movieID, {
             method: "PATCH",
@@ -34,7 +35,7 @@ export const listMovie = async () => {
         console.error(error.message);
     }
 }
-export const CreateMovies = async (movieData) => {
+export const createMovies = async (movieData) => {
     try{
         const response = await fetch(API_BASE_URL + "/list/",
             {method:"POST",

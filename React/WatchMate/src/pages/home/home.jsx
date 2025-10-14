@@ -4,7 +4,6 @@
 // import { listMovie } from '../services/movie.js'
 // import MovieModal from '../components/MovieModals/movieModals.jsx'
 import Button from 'react-bootstrap/esm/Button'
-
 import { useEffect, useState } from "react";
 import {listMovie} from "../../services/movie";
 import TableComponent from '../../components/table/table';
@@ -38,7 +37,7 @@ function HomePage() {
   }
   const onDelete = (movie) =>{
       console.log("calling delete.")
-    
+      deleteMovie(movie.id)
 }
   
 return (
