@@ -42,7 +42,6 @@ Simple example to demostrate the use of function and passing a variable as param
 
 '''
     Positional Arguments
-
 '''
 def add(a, b):
     return a + b
@@ -51,3 +50,9 @@ val = int(input("Enter the value of a."))
 val1 = int(input("Enter the value of b."))
 res = add(val, val1)
 print(f"The result is :{res}")
+
+# variable - length arguments
+# *args
+# **kwargs
+
+
