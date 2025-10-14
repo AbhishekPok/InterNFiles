@@ -12,13 +12,14 @@ import MovieModal from '../../components/MovieModals/movieModals';
 import NavbarComponent from '../../components/NavBar/NavBar';
 
 function HomePage() {
+  const [selectedMovie, setselectedMovie] = useState([]);
   const [moviesList, setMoviesList] = useState([]);
   const [show, setShow] = useState(false);
   const [refresh, setRefesh] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  
 
   useEffect(() => {
     const movies = listMovie();
@@ -30,6 +31,15 @@ function HomePage() {
     })
   },[refresh])
 
+  const onEdit = (movie) =>{
+      console.log("edit call bhairako xa.")
+      handleShow();
+      setselectedMovie(movie);
+  }
+  const onDelete = (movie) =>{
+      console.log("calling delete.")
+    
+}
   
 return (
     <>
@@ -37,8 +47,13 @@ return (
       <Button variant="primary" onClick={handleShow} style={{float:"right"}}>
         Create Movie
       </Button>
-      <TableComponent movies = {moviesList}/>
-      <MovieModal show={show} handleShow={handleShow} setRefesh={setRefesh} handleClose={handleClose}/>
+      <TableComponent movies = {moviesList} onEdit = {onEdit} onDelete = {onDelete}/>
+      <MovieModal 
+      show={show} 
+      selectedMovie ={selectedMovie} 
+      setRefesh={setRefesh} 
+      handleClose={handleClose}
+      />
     </>
   )
 }

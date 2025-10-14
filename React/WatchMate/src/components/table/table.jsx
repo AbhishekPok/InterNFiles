@@ -1,7 +1,7 @@
 import Table from 'react-bootstrap/Table';
-
+import Button from 'react-bootstrap/Button';
 function TableComponent(props) {
-  // console.log(props, "k xa table ma")
+  console.log(props, "k xa table ma")
   return (
     <Table striped bordered hover>
       <thead>
@@ -10,6 +10,7 @@ function TableComponent(props) {
           <th>StoryLine</th>
           <th>Is Active</th>
           <th>Ceated At</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -21,6 +22,14 @@ function TableComponent(props) {
                         <td>{item.storyline}</td>
                         <td>{item.active ? "Active" : "Inactive"}</td>
                         <td>{item.created_at}</td> 
+                        <td>
+                          <Button onClick = {() => props?.onEdit(item)}>
+                          Edit
+                          </Button>
+                          <Button variant = "danger" >
+                            Delete
+                          </Button>
+                        </td>
                     </tr>
                 );
             })
