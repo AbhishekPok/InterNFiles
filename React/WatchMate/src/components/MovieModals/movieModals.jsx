@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import {createMovies, updateMovie, deleteMovie}  from '../../services/movie';
+import {createMovies, updateMovie,}  from '../../services/movie';
 
 
 function MovieModal(props) {
@@ -22,11 +22,13 @@ console.log("selected movee", selectedMovie);
 
 
   const handleSumbit = async() => {
-    // console.log("k hudai xa yeha")
+    console.log("handle submit ma xa", FormData);
     if (selectedMovie){
+console.log("k hudai xa yeha", selectedMovie, FormData)
       await updateMovie(selectedMovie.id, FormData);
     }
     else{
+      console.log("create ma xa")
     await createMovies(FormData);
     }
     handleClose();

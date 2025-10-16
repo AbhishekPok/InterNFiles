@@ -37,6 +37,10 @@
   padding: 2em;
 }
 
+.navbar{
+    background-color : purple
+}
+
 .read-the-docs {
   color: #888;
 }

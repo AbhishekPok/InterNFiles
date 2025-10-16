@@ -20,13 +20,13 @@ function TableComponent(props) {
                     <tr key = {index}>
                     <td>{item.title}</td>
                         <td>{item.storyline}</td>
-                        <td>{item.active ? "Active" : "Inactive"}</td>
+                        <td>{item.active ? "Active" : "Inactive"}</td> {/* */}
                         <td>{item.created_at}</td> 
                         <td>
                           <Button onClick = {() => props?.onEdit(item)}>
                           Edit
                           </Button>
-                          <Button variant = "danger" >
+                          <Button variant = "danger" onClick = {() => props?.onDelete(item.id)} >
                             Delete
                           </Button>
                         </td>

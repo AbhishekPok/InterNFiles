@@ -9,9 +9,10 @@ import {listMovie} from "../../services/movie";
 import TableComponent from '../../components/table/table';
 import MovieModal from '../../components/MovieModals/movieModals';
 import NavbarComponent from '../../components/NavBar/NavBar';
+import { deleteMovie } from '../../services/movie.js';
 
 function HomePage() {
-  const [selectedMovie, setselectedMovie] = useState([]);
+  const [selectedMovie, setselectedMovie] = useState(null);
   const [moviesList, setMoviesList] = useState([]);
   const [show, setShow] = useState(false);
   const [refresh, setRefesh] = useState(false);
@@ -35,10 +36,10 @@ function HomePage() {
       handleShow();
       setselectedMovie(movie);
   }
-  const onDelete = (movie) =>{
-      console.log("calling delete.")
-      deleteMovie(movie.id)
-}
+
+  const onDelete = (movieId) =>{
+      deleteMovie(movieId)
+    }
   
 return (
     <>

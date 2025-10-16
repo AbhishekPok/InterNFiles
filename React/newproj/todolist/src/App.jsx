@@ -1,4 +1,4 @@
-// import './App.css'
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NewNavbar from './components/navbars/Navbar';
 
@@ -7,9 +7,9 @@ function App() {
   return (
     <>
     <NewNavbar/>
-      <div className="card">
+      <div className="card navbar">
       <h1>
-      Under Construction      
+        
       </h1>
       </div>
     </>
